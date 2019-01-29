@@ -1,0 +1,1 @@
+xcopy WebpackUserscript "%userprofile%\Documents\Visual Studio 2017\Templates\ProjectTemplates\JavaScript\WebpackUserscript\" /Y /E

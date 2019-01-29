@@ -15,27 +15,38 @@
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
   </TemplateData>
   <TemplateContent>
-    <Project File="ExpressApp.njsproj" ReplaceParameters="true">
+    <CustomParameters>  
+      <CustomParameter Name="$description$" Value="Userscript description" />  
+      <CustomParameter Name="$namespace$" Value="namespace" />  
+      <CustomParameter Name="$websitematch$" Value="https://www.example.com/" />  
+      <CustomParameter Name="$namespace$" Value="namespace" />  
+    </CustomParameters>  
+    <Project File="WebpackUserscript.njsproj" ReplaceParameters="true">
       <Folder Name="gulp-scripts">
-        <ProjectItem>gulp-scripts\commands.js</ProjectItem>
-        <ProjectItem>gulp-scripts\version.js</ProjectItem>
-        <ProjectItem>gulp-scripts\webpack.js</ProjectItem>
+        <ProjectItem>commands.js</ProjectItem>
+        <ProjectItem>version.js</ProjectItem>
+        <ProjectItem>webpack.js</ProjectItem>
       </Folder>
       <Folder Name="src">
-        <ProjectItem  OpenInEditor="true">src\index.js</ProjectItem>
+        <ProjectItem  OpenInEditor="true">index.js</ProjectItem>
       </Folder>
-      <ProjectItem>head.js</ProjectItem>
+      <ProjectItem>header.js</ProjectItem>
       <ProjectItem>gulpfile.js</ProjectItem>
       <ProjectItem>webpack.config.js</ProjectItem>
       <ProjectItem>.gitignore</ProjectItem>
       <ProjectItem>.eslintrc.js</ProjectItem>
       <ProjectItem>.eslintignore</ProjectItem>
       <ProjectItem ReplaceParameters="true">package.json</ProjectItem>
+      <ProjectItem>package-lock.json</ProjectItem>
       <ProjectItem ReplaceParameters="true">README.md</ProjectItem>
     </Project>
-  </TemplateContent>  <!--
+  </TemplateContent> 
   <WizardExtension>
     <Assembly>Microsoft.NodejsTools.ProjectWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
-    <FullClassName>Microsoft.NodejsTools.ProjectWizard.CloudServiceWizard</FullClassName>
-  </WizardExtension> -->
+    <FullClassName>Microsoft.NodejsTools.ProjectWizard.NpmWizardExtension</FullClassName>
+  </WizardExtension>
+  <WizardExtension>
+    <Assembly>Microsoft.NodejsTools.ProjectWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.NodejsTools.ProjectWizard.NodejsPackageParametersExtension</FullClassName>
+  </WizardExtension>
 </VSTemplate>
