@@ -1,0 +1,41 @@
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Userscript with Webpack</Name>
+    <Description>Create a userscript as a maintainable project</Description>
+    <ProjectType>JavaScript</ProjectType>
+    <TemplateID>Mareda.WebpackUserscript</TemplateID>
+    <SortOrder>22</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WebpackUserscript</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <Icon>project-icon.png</Icon>
+    <PromptForSaveOnCreation>true</PromptForSaveOnCreation>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ExpressApp.njsproj" ReplaceParameters="true">
+      <Folder Name="gulp-scripts">
+        <ProjectItem>gulp-scripts\commands.js</ProjectItem>
+        <ProjectItem>gulp-scripts\version.js</ProjectItem>
+        <ProjectItem>gulp-scripts\webpack.js</ProjectItem>
+      </Folder>
+      <Folder Name="src">
+        <ProjectItem  OpenInEditor="true">src\index.js</ProjectItem>
+      </Folder>
+      <ProjectItem>head.js</ProjectItem>
+      <ProjectItem>gulpfile.js</ProjectItem>
+      <ProjectItem>webpack.config.js</ProjectItem>
+      <ProjectItem>.gitignore</ProjectItem>
+      <ProjectItem>.eslintrc.js</ProjectItem>
+      <ProjectItem>.eslintignore</ProjectItem>
+      <ProjectItem ReplaceParameters="true">package.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true">README.md</ProjectItem>
+    </Project>
+  </TemplateContent>  <!--
+  <WizardExtension>
+    <Assembly>Microsoft.NodejsTools.ProjectWizard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</Assembly>
+    <FullClassName>Microsoft.NodejsTools.ProjectWizard.CloudServiceWizard</FullClassName>
+  </WizardExtension> -->
+</VSTemplate>
