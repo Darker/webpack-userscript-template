@@ -1,5 +1,3 @@
-const { padEnd } = require('./lib/string-utils')
-
 const PKG = require('./package.json')
 
 function extraHead () {
@@ -8,11 +6,11 @@ function extraHead () {
     if (Array.isArray(PKG.header[field])) {
       PKG.header[field].forEach(element => {
         if (typeof element === 'string') {
-          ret.push(`// @${padEnd(field, 13)}${element}`)
+          ret.push(`// @${field.padEnd(13, " ")}${element}`)
         }
       })
     } else if (typeof PKG.header[field] === 'string') {
-      ret.push(`// @${padEnd(field, 13)}${PKG.header[field]}`)
+        ret.push(`// @${field.padEnd(13, " ")}${PKG.header[field]}`)
     }
   }
   return ret.join('\n')
